@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0](https://github.com/guerzon/terraform-aws-modulescollection/compare/v1.1.0...v1.2.0) (2024-11-16)
+
+
+### Features
+
+* add vpc_cidr output, fix typos in description ([6fc3821](https://github.com/guerzon/terraform-aws-modulescollection/commit/6fc3821881ea07bc7f5678ecfd8280743e9cbaa1))
+* Add vpc_cidr output, fix typos in description ([#4](https://github.com/guerzon/terraform-aws-modulescollection/issues/4)) ([c58695d](https://github.com/guerzon/terraform-aws-modulescollection/commit/c58695d9f7316cef37d56d4341e48b41aa45d9b7))
+
 ## [1.1.0](https://github.com/guerzon/terraform-aws-modulescollection/compare/v1.0.0...v1.1.0) (2024-11-16)
 
 
