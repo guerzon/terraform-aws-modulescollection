@@ -1,5 +1,5 @@
 resource "aws_eks_cluster" "this" {
-  name     = "vaultwarden-${var.environment}-${var.eks_cluster_name}"
+  name     = var.eks_cluster_name
   version  = var.k8s_version
   role_arn = aws_iam_role.cluster.arn
   vpc_config {

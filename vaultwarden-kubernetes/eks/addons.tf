@@ -53,7 +53,7 @@ resource "helm_release" "aws_lb_controller" {
 
   set {
     name  = "clusterName"
-    value = "vaultwarden-${var.environment}-${var.eks_cluster_name}"
+    value = var.eks_cluster_name
   }
 
   set {
