@@ -6,9 +6,9 @@ resource "aws_subnet" "private" {
   availability_zone = var.availability_zones[count.index]
 
   tags = {
-    Name                                                                           = "vaultwarden-${var.environment}-private-${count.index + 1}",
-    "kubernetes.io/role/internal-elb"                                              = 1,
-    "kubernetes.io/cluster/vaultwarden-${var.environment}-${var.eks_cluster_name}" = "owned"
+    Name                                            = "vaultwarden-${var.environment}-private-${count.index + 1}",
+    "kubernetes.io/role/internal-elb"               = 1,
+    "kubernetes.io/cluster/${var.eks_cluster_name}" = "owned"
   }
 }
 
@@ -20,8 +20,8 @@ resource "aws_subnet" "public" {
   availability_zone = var.availability_zones[count.index]
 
   tags = {
-    Name                                                                           = "vaultwarden-${var.environment}-public-${count.index + 1}",
-    "kubernetes.io/role/elb"                                                       = 1,
-    "kubernetes.io/cluster/vaultwarden-${var.environment}-${var.eks_cluster_name}" = "owned"
+    Name                                            = "vaultwarden-${var.environment}-public-${count.index + 1}",
+    "kubernetes.io/role/elb"                        = 1,
+    "kubernetes.io/cluster/${var.eks_cluster_name}" = "owned"
   }
 }
