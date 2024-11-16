@@ -4,11 +4,16 @@ output "vpc_id" {
 }
 
 output "private_subnet_ids" {
-  description = "List of all created private VPCs"
+  description = "List of all created private subnets"
   value       = aws_subnet.private[*].id
 }
 
 output "public_subnet_ids" {
-  description = "List of all created public VPCs"
+  description = "List of all created public subnets"
   value       = aws_subnet.public[*].id
+}
+
+output "vpc_cidr" {
+  description = "CIDR range of the VPC"
+  value       = aws_vpc.this.cidr_block
 }
