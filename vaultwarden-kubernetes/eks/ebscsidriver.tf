@@ -16,7 +16,7 @@ data "aws_iam_policy_document" "ebs_csi_irsa" {
 
     condition {
       test     = "StringEquals"
-      variable = "${aws_iam_openid_connect_provider.this[0].arn}:sub"
+      variable = "${replace(aws_iam_openid_connect_provider.this[0].url, "https://", "")}:sub"
 
       values = [
         "system:serviceaccount:kube-system:ebs-csi-controller-sa"
@@ -44,19 +44,18 @@ resource "aws_eks_addon" "ebs_csi_driver" {
   preserve                 = false
 }
 
-# resource "kubernetes_storage_class" "ebs_csi_sc" {
-#   metadata {
-#     name = "ebs-sc"
-#   }
-#   storage_provisioner = "ebs.csi.aws.com"
-#   volume_binding_mode = "WaitForFirstConsumer"
-#   parameters = {
-#     type = "gp3"
-#   }
+resource "kubernetes_storage_class" "ebs_csi_sc" {
+  metadata {
+    name = "ebs-sc"
+  }
+  storage_provisioner = "ebs.csi.aws.com"
+  volume_binding_mode = "WaitForFirstConsumer"
+  reclaim_policy      = "Retain"
+  parameters = {
+    type = "gp3"
+  }
 
-#   depends_on = [
-#     # aws_eks_cluster.this
-#     # module.ebs_csi_irsa_role
-#     module.eks
-#   ]
-# }
+  depends_on = [
+    aws_eks_cluster.this
+  ]
+}
