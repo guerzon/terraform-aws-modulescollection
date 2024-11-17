@@ -11,24 +11,6 @@ resource "aws_iam_openid_connect_provider" "this" {
   url             = aws_eks_cluster.this.identity[0].oidc[0].issuer
 }
 
-## This is the glue between AWS IAM and Kubernetes
-
-data "aws_eks_cluster_auth" "eks" {
-  name = aws_eks_cluster.this.name
-}
-
-provider "helm" {
-  kubernetes {
-    host                   = aws_eks_cluster.this.endpoint
-    cluster_ca_certificate = base64decode(aws_eks_cluster.this.certificate_authority[0].data)
-    token                  = data.aws_eks_cluster_auth.eks.token
-  }
-}
-
-## IAM
-
-# this creates: aws_iam_role_policy_attachment, aws_iam_policy, and aws_iam_role
-
 module "load_balancer_controller_irsa_role" {
 
   source    = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks"
