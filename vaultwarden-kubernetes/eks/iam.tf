@@ -34,6 +34,7 @@ resource "aws_iam_role" "nodes" {
     POLICY
 }
 
+## Allows EKS to create EC2 instances and Load-balancers
 resource "aws_iam_role_policy_attachment" "cluster" {
   role       = aws_iam_role.cluster.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
