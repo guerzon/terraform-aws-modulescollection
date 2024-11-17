@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0](https://github.com/guerzon/terraform-aws-modulescollection/compare/v1.2.0...v1.3.0) (2024-11-17)
+
+
+### Features
+
+* Add Amazon RDS for PostgreSQL support ([5124c58](https://github.com/guerzon/terraform-aws-modulescollection/commit/5124c58f17d98b0a777315830ee3edda08f778e3))
+* Add Amazon RDS for PostgreSQL support ([#3](https://github.com/guerzon/terraform-aws-modulescollection/issues/3)) ([142ce40](https://github.com/guerzon/terraform-aws-modulescollection/commit/142ce40a851e1cb6820039fb7991e1007a91e9e3))
+
 ## [1.2.0](https://github.com/guerzon/terraform-aws-modulescollection/compare/v1.1.0...v1.2.0) (2024-11-16)
 
 
