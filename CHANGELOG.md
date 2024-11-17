@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.0](https://github.com/guerzon/terraform-aws-modulescollection/compare/v1.3.0...v1.4.0) (2024-11-17)
+
+
+### Features
+
+* Add support for EBS CSI Driver ([c99af80](https://github.com/guerzon/terraform-aws-modulescollection/commit/c99af8032c2083b99af71e4ee1b06cad61d6ce92))
+* **addons:** Add EBS CSI Driver and storage class ([#5](https://github.com/guerzon/terraform-aws-modulescollection/issues/5)) ([274c781](https://github.com/guerzon/terraform-aws-modulescollection/commit/274c781f2ad85b47e824c3407b8391903cec1939))
+* EKS addons rework (stash) ([e0d2e6e](https://github.com/guerzon/terraform-aws-modulescollection/commit/e0d2e6e563a0fea815bf0ca72f6e22221bb0de71))
+
 ## [1.3.0](https://github.com/guerzon/terraform-aws-modulescollection/compare/v1.2.0...v1.3.0) (2024-11-17)
 
 
