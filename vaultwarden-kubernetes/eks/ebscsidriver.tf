@@ -1,4 +1,10 @@
 
+provider "kubernetes" {
+  host                   = aws_eks_cluster.this.endpoint
+  cluster_ca_certificate = base64decode(aws_eks_cluster.this.certificate_authority[0].data)
+  token                  = data.aws_eks_cluster_auth.eks.token
+}
+
 data "aws_iam_policy_document" "ebs_csi_irsa" {
   statement {
     actions = ["sts:AssumeRoleWithWebIdentity"]
