@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.2](https://github.com/guerzon/terraform-aws-modulescollection/compare/v1.4.1...v1.4.2) (2024-11-30)
+
+
+### Bug Fixes
+
+* Resource depends on aws_eks_node_group ([#7](https://github.com/guerzon/terraform-aws-modulescollection/issues/7)) ([1d4dc33](https://github.com/guerzon/terraform-aws-modulescollection/commit/1d4dc33ea60488defc14353aeedfce595f9b8f68))
+
 ## [1.4.1](https://github.com/guerzon/terraform-aws-modulescollection/compare/v1.4.0...v1.4.1) (2024-11-30)
 
 
