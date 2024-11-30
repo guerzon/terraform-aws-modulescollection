@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.1](https://github.com/guerzon/terraform-aws-modulescollection/compare/v1.4.0...v1.4.1) (2024-11-30)
+
+
+### Bug Fixes
+
+* kubernetes_storage_class should depend on aws_eks_addon installation ([#6](https://github.com/guerzon/terraform-aws-modulescollection/issues/6)) ([cc9b7f5](https://github.com/guerzon/terraform-aws-modulescollection/commit/cc9b7f5d8cf7358acd577f5ede8b8f29514716e1))
+
 ## [1.4.0](https://github.com/guerzon/terraform-aws-modulescollection/compare/v1.3.0...v1.4.0) (2024-11-17)
 
 
