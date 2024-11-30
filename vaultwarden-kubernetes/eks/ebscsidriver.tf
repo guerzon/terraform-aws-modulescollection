@@ -49,6 +49,6 @@ resource "kubernetes_storage_class" "ebs_csi_sc" {
   }
 
   depends_on = [
-    aws_eks_cluster.this
+    aws_eks_addon.ebs_csi_driver
   ]
 }
